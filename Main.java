@@ -7,30 +7,30 @@ public class Main {
         double x, dx, xg;
         Scanner sc = new Scanner(System.in);
         try {
-            //sākotnējais x skaitlis
+            //original x number
             System.out.println("from: ");
             x = sc.nextDouble();
-            //pēdējais x skaitlis
+            //last x number
             System.out.println("to: ");
             xg = sc.nextDouble();
-            //uz cik pievienot x skaitli
+            //by how much to increase the number x
             System.out.println("step: ");
             dx = sc.nextDouble();
 
-            // beigsies lidz x bus vienads vai mazaks par xg+dx/2
+            // will end, when x will be equal to or less than xg+dx/2
             while (x <= xg+dx/2) {
-                //ja x ir mazaks par 1
+                //if x less than 1
                 if (x < 1)
                     System.out.printf("%.2f\tnot defined%n",x);
-                //aprekina formulu
+                //solve the formula
                 else {
                     System.out.printf("%.2f\t%.2f", x, (Math.pow(x + 1, 2) / Math.sqrt(x - 1)));
                     System.out.println(" ");
                 }
-                //palielina skaitli uz dx
+                //increase x 
                 x = x + dx;
             }
-        // izvada, ja izvada kaut kadu citu simbolu, bet ne skaitli
+        // output if in input isn't a number
         } catch (Exception e) {
             System.out.println("input-output error");
         }
